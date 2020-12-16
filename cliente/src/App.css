@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+
+body {
+  background-color: #f7f7f7;
+  font-family: 'Lato', sans-serif;
+}
+
+ h1 {
+    letter-spacing: 1px;
+    margin: 0;
+}
+h3 {
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 10px;
+    margin: 40px 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+ }
+  
+h2 {
+  color: #fff
+}
+h4 {
+    margin: 0;
+    text-transform: uppercase;
+}  
+.container {
+  max-width: auto;
+  width: auto;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, auto);
+}
+
+.header{
+  background-color: #FF5049;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+
+/* Inicio de montos Totales de Ingresos y Egresos */
+.inc-exp-container {  
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.inc-exp-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.inc-exp-container > div:first-of-type {
+  border-right: 1px solid #dedede;
+}
+
+.money {
+  font-size: 20px;
+  letter-spacing: 1px;
+  margin: 5px 0;
+}
+
+.money.ingreso {
+  color: #2ecc71;
+}
+
+.money.egreso {
+  color: #c0392b;
+}
+/* Fin de montos Totales de Ingresos y Egresos */
+
+
+/* Inicio de Operaciones: Añadir transacciones */
+
+.operaciones{
+  grid-column:  span 2;
+  text-align: center;
+
+}
+
+.formularios{
+  grid-column: span 2;
+
+}
+
+label {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+input[type='text'],
+input[type='number'],
+input[type="date"] {
+  border: 1px solid #dedede;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  width: 95%;
+}
+.btn {
+  cursor: pointer;
+  background-color: #9c88ff;
+  box-shadow: var(--box-shadow);
+  color: #fff;
+  border: 0;
+  display: block;
+  font-size: 16px;
+  margin: 10px 0 30px;
+  padding: 10px;
+  width: 100%;
+}
+
+.btn :hover{
+  color:blueviolet;
+}
+
+.btn:focus,
+.delete-btn:focus {
+  outline: 0;
+}
+
+/* Fin de Operaciones */
+
+/* Inicio del Historial */
+
+.historial{
+  grid-column: span 4;
+}
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+.clasificaciones{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 2%;
+  position: relative;
+  font-size: 18px;
+}
+
+#date{
+  padding-right: 5%;
+}
+.list li {
+  background-color: #fff;
+  color: #333;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px;
+  margin: 10px 0;
+  margin-left: 2%;
+}
+
+.list li.ingreso {
+  border-right: 5px solid #2ecc71;
+}
+
+.list li.egreso {
+  border-right: 5px solid #c0392b;
+}
+
+.delete-btn {
+  cursor: pointer;
+  background-color: #e74c3c;
+  border: 0;
+  color: #fff;
+  font-size: 20px;
+  line-height: 20px;
+  padding: 2px 5px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.list li:hover .delete-btn {
+  opacity: 1;
+}
+
+/* Fin del Historial */
+
+/* INICIO FOOTER */
+.footer{
+  background-color: #FF5049;
+  height: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  font-size: 14px;
+  grid-column-start: 1;
+  grid-column-end: -1;
+}
+/* FIN FOOTER */
+
+/* Para hacerlo responsive */
+@media screen and (max-width: 768px) {
+  .operaciones,
+  .historial{
+    grid-column: 1 / -1;
+  }
+  .clasificaciones{
+    font-size: 17px;
+  }
+  .list li {
+    margin-left: 5%;
+  }
+}

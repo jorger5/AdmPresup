@@ -1,0 +1,25 @@
+{
+  "name": "admpresup",
+  "version": "1.0.0",
+  "description": "back de adm-presupuesto",
+  "main": "servidor.js",
+  "scripts": {
+    "start": "node servidor",
+    "servidor": "nodemon servidor",
+    "cliente": "npm start --prefix cliente",
+    "dev": "concurrently \"npm run servidor\" \"npm run cliente\""
+  },
+  "author": "JRincon",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.7",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.4"
+  }
+}
